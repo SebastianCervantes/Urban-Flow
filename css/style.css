@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,700');
 
 * {
   font-family: 'Montserrat', sans-serif;
@@ -35,10 +35,13 @@
   color: #b72c5b;
 }
 
-
 nav {
+  display: flex;
+  width: 100%;
   background-color: #0b0f55;
   fill: #b72c5b;
+  position: fixed;
+  z-index: 1;
 }
 
 .navegador {
@@ -49,20 +52,117 @@ nav {
 
 h1 {
   font-size: 80px;
-  font-weight: 800;
+  font-weight: 700;
+  margin: 0;
 }
 
 h2 {
   font-size: 60px;
-  font-weight: 800;
+  font-weight: 700;
+  margin: 0;
 }
 
 h3 {
   font-size: 36px;
   font-weight: 400;
+  margin: 0;
 }
 
 h4 {
-  font-size: 30px;
-  font-weight: 200;
+  font-size: 15px;
+  font-weight: 300;
+  margin: 0;
+}
+
+.votos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 70%;
+  flex-direction: column;
+  padding: 100px 25px;
+}
+
+.votos h2,
+.votos h4 {
+  text-align: center;
+}
+
+.votos h4 {
+  margin: 0 0 25px 0;
+}
+
+.votos article>div {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+}
+
+.votos img {
+  width: 100%;
+}
+
+.votos button {
+  width: 100%;
+}
+
+.votos article {
+  opacity: 0;
+  transform: translateY(-30px);
+  animation-duration: .5s;
+  animation-timing-function: ease;
+  animation-name: animacion-entrada;
+  animation-fill-mode: forwards;
+}
+
+@keyframes animacion-entrada {
+  0% {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.votos article:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.votos article:nth-child(2) {
+  animation-delay: .1s;
+}
+
+.votos article:nth-child(3) {
+  animation-delay: .2s;
+}
+
+.votos article:nth-child(4) {
+  animation-delay: .3s;
+}
+
+.votos article:nth-child(5) {
+  animation-delay: .3s;
+}
+
+.votos article:nth-child(6) {
+  animation-delay: .5s;
+}
+
+.votos article:nth-child(7) {
+  animation-delay: .6s;
+}
+
+.votos article:nth-child(8) {
+  animation-delay: .7s;
+}
+
+.votos article:nth-child(9) {
+  animation-delay: .8s;
+}
+
+.votos      article:nth-child(10) {
+  animation-delay: .9s;
 }
