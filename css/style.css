@@ -39,6 +39,10 @@
 nav {
   background-color: #0b0f55;
   fill: #b72c5b;
+  display: flex;
+  width: 100%;
+  position: fixed;
+  z-index: 1;
 }
 
 .navegador {
@@ -65,4 +69,28 @@ h3 {
 h4 {
   font-size: 30px;
   font-weight: 200;
+}
+
+.stemen {
+  background-image: url(../Images/Concurso/Inscripciones.jpg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  display: flex;
+  background-size: 100%;
+  background-position: inherit;
+  position: relative;
+  height: 900px;
+  width: 100%;
+  top: 158px;
+  padding: 0;
+}
+
+.LuegoBorraEsto {
+  height: 800px;
+  background-color: #ffffff;
+}
+
+.inscripciones {
+  padding: 0;
+  position: relative;
 }
