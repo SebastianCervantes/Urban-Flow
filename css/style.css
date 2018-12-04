@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,700');
 
 * {
   font-family: 'Montserrat', sans-serif;
@@ -35,8 +35,9 @@
   color: #b72c5b;
 }
 
-
 nav {
+  display: flex;
+  width: 100%;
   background-color: #0b0f55;
   fill: #b72c5b;
   display: flex;
@@ -53,17 +54,20 @@ nav {
 
 h1 {
   font-size: 80px;
-  font-weight: 800;
+  font-weight: 700;
+  margin: 0;
 }
 
 h2 {
   font-size: 60px;
-  font-weight: 800;
+  font-weight: 700;
+  margin: 0;
 }
 
 h3 {
   font-size: 36px;
   font-weight: 400;
+  margin: 0;
 }
 
 h4 {
@@ -72,25 +76,250 @@ h4 {
 }
 
 .stemen {
-  background-image: url(../Images/Concurso/Inscripciones.jpg);
-  background-repeat: no-repeat;
+  align-items: center;
   background-attachment: fixed;
-  display: flex;
+  background-image: url(../Images/Concurso/Inscripciones.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
   background-size: 100%;
-  background-position: inherit;
-  position: relative;
-  height: 900px;
-  width: 100%;
-  top: 158px;
+  display: flex;
+  flex-direction: column;
+  height: 400px;
   padding: 0;
+  position: relative;
+  top: 158px;
+  width: 100%;
 }
 
 .LuegoBorraEsto {
-  height: 800px;
   background-color: #ffffff;
+  height: 1200px;
 }
 
 .inscripciones {
   padding: 0;
   position: relative;
+}
+
+#azul {
+  color: #4BBBDD;
+  margin-top: 4%;
+}
+
+#blanco {
+  color: #ffffff;
+  margin-top: 0.5%;
+}
+
+#rosa {
+  color: #B72C5B;
+}
+
+.botoncilloscul {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  height: 150px;
+  justify-content: center;
+  position: relative;
+}
+
+.botoncilloscul button {
+  background-color: #B72C5B;
+  border: none;
+  color: #fff;
+  font-size: 2em;
+  height: 70px;
+  padding: 7px 30px;
+  transition: background-color 0.4s ease-out;
+}
+
+.botoncilloscul button:hover,
+.env:hover,
+.urban button:hover,
+#ind-boton:hover {
+  background-color: #4BBBDD;
+  color: #342CC7;
+  cursor: pointer;
+}
+
+.botoncilloscul button:focus {
+  background-color: #4BBBDD;
+  color: #342CC7;
+  outline: none;
+}
+
+#cajablanca {
+  background-color: #fff;
+  height: 650px;
+  margin: 20px;
+  padding: 50px;
+  position: relative;
+  width: 70%;
+  overflow: auto;
+}
+
+input[type=text],
+#estado,
+textarea {
+  border: 1px solid #000;
+  box-sizing: border-box;
+  display: inline-block;
+  font-weight: 300;
+  margin: 8px 0;
+  padding: 8px 20px;
+  width: 95%;
+}
+
+input[type=text]:focus,
+#estado,
+textarea:focus {
+  border: 2px solid #555;
+  outline: none;
+}
+
+textarea {
+  height: 150px;
+}
+
+.cam {
+  padding: 10px;
+}
+
+.env {
+  background-color: #B72C5B;
+  border: none;
+  color: #fff;
+  font-size: 1.5em;
+  height: 55px;
+  padding: 0 30px;
+  transition: background-color 0.4s ease-out;
+}
+
+.confirmacion {
+  background-color: rgba(11, 15, 85, 0.8);
+  position: fixed;
+  width: 50%;
+  height: 500px;
+  top: 25%;
+  left: 25%;
+  z-index: 3;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+#opacidad {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  z-index: 2;
+}
+
+.main-forma {
+  display: flex;
+}
+
+#fantasma {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+
+#fantasma h2 {
+  margin: 0;
+}
+
+.env-padre {
+  display: flex;
+  justify-content: flex-end;
+}
+
+
+/*Mobile*/
+@media screen and (max-width: 374px) {
+  /*CSS Para Dispositivos Chicos*/
+
+  .botoncilloscul button,
+  .env {
+    font-size: 1em;
+    height: 40px;
+    margin: 4% 3%;
+    padding: 0 8px;
+  }
+
+  .stemen {
+    background-size: 400%;
+  }
+
+  #cajablanca {
+    overflow: auto;
+    padding: 4px;
+  }
+}
+@media screen and (min-width: 375px) and (max-width: 600px) {
+
+  .botoncilloscul button,
+  .env {
+    font-size: 1em;
+    height: 50px;
+    margin: 4% 8%;
+    padding: 0 10px;
+  }
+
+  .stemen {
+    background-size: 350%;
+    text-align: center;
+  }
+
+  .que-equipo{
+    font-size: 2em;
+  }
+
+  #cajablanca {
+    padding: 5px;
+    overflow: auto;
+  }
+}
+
+@media screen and (min-width: 601px) and (max-width: 768px) {
+  .stemen {
+    background-size: 170%;
+  }
+
+  .botoncilloscul button {
+    margin: 10px;
+  }
+
+  #azul {
+    margin-top: 9%;
+  }
+
+}
+
+
+@media screen and (min-width: 769px) and (max-width: 1200px) {
+  /*TABLETS Y CRAPPY PCS*/
+  .stemen {
+    background-size: 120%;
+  }
+
+  #azul {
+    margin-top: 8%;
+  }
+}
+
+@media screen and (min-width: 1201px) and (max-width: 2400px) {
+  /*COMPUTADORAS DE ESCRITORIO*/
+}
+
+@media screen and (min-width: 2401px) {
+  /*TODO LO GIGANTE*/
+
 }
