@@ -19,10 +19,4 @@ $(function() {
       $('.voto-overlay').fadeOut();
     }
  });
-
-  $('.votos img').bind('click', function(){
-    buttonpressed = $(this).attr('class');
-    if()
-  });
-
 });
