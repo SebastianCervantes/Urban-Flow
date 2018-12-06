@@ -40,16 +40,53 @@ nav {
   width: 100%;
   background-color: #0b0f55;
   fill: #b72c5b;
-  display: flex;
-  width: 100%;
   position: fixed;
-  z-index: 1;
+  z-index: 2;
 }
 
 .navegador {
   padding: 0;
   display: flex;
   justify-content: flex-end;
+}
+
+.hamburguesa {
+  display: none;
+  position: fixed;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(11, 15, 85, .8);
+  width: 100%;
+  height: 100%;
+}
+
+#ham-boton {
+  background-image: url(../Images/hamburguesas-08.png);
+  background-size: 50%;
+  background-repeat: no-repeat;
+  width: 10%;
+  height: 100%;
+  position: absolute;
+  background-position: center;
+  right: 7%;
+  display: none;
+}
+
+.hamburguesa a {
+  text-decoration: none;
+  font-size: 5vw;
+  margin: 4%;
+  color: #fff;
+}
+
+.hamburguesa a:focus {
+  color: #b72c5b;
+}
+
+.hamburguesa img {
+  position: absolute;
+  bottom: 5%;
 }
 
 h1 {
@@ -59,7 +96,7 @@ h1 {
 }
 
 h2 {
-  font-size: 60px;
+  font-size: 3em;
   font-weight: 700;
   margin: 0;
 }
@@ -89,11 +126,6 @@ h4 {
   position: relative;
   top: 158px;
   width: 100%;
-}
-
-.LuegoBorraEsto {
-  background-color: #ffffff;
-  height: 1200px;
 }
 
 .inscripciones {
@@ -155,6 +187,7 @@ h4 {
   margin: 20px;
   padding: 50px;
   position: relative;
+  text-align: left;
   width: 70%;
   overflow: auto;
 }
@@ -168,7 +201,7 @@ textarea {
   font-weight: 300;
   margin: 8px 0;
   padding: 8px 20px;
-  width: 95%;
+  width: 100%;
 }
 
 input[type=text]:focus,
@@ -210,12 +243,146 @@ textarea {
   align-items: center;
 }
 
+.votos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 100px 250px 0;
+  margin: 0;
+}
+
+.votos h2,
+.votos h4 {
+  text-align: center;
+}
+
+.votos h4 {
+  margin: 0 0 25px 0;
+}
+
+.votos article>div {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  margin-bottom: 50px;
+  transition: all .5s ease;
+}
+
+
+.votos article>div:hover {
+  transform: scale(1.03);
+}
+
+.voto-overlay {
+  padding: 90px;
+  display: none;
+  justify-content: center;
+  position: fixed;
+  z-index: 1;
+  background-color: rgba(255, 255, 255, 0.98);
+  height: 100vh;
+  overflow: auto;
+}
+
+#foto-overlay {
+  width: 100%;
+}
+
+.comment .new-comment {
+  display: flex;
+  justify-content: flex-start;
+  border-top: 1px solid #666666;
+  margin: 50px 0 0;
+  padding: 0;
+}
+
+.voto-overlay h2 {
+  padding: 10px 0 5px;
+  border-bottom: 1px solid #666666;
+  width: 100%;
+}
+
 #opacidad {
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
   position: absolute;
   z-index: 2;
+}
+
+.comment {
+  overflow: auto;
+}
+
+#like {
+  height: 50px;
+  overflow: hidden;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 0;
+}
+
+.comment>div {
+  margin-top: 20px;
+}
+
+#like img {
+  transform:
+    scale(0.7)
+    translate(0,-15px);
+    transition: all 0 ease;
+}
+
+#like img:hover {
+  transform:
+    scale(0.7)
+    translate(0,-90px);
+}
+
+.comment h3 {
+  font-size: 1.2em;
+}
+
+.exit {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+#close {
+  border: 0;
+  background-color: #ffffff00;
+  font-size: 3em;
+  font-weight: 400;
+}
+
+#put-comment {
+  border: 0;
+  font-size: 1.2em;
+  padding: 5px;
+  background-color: rgba(255, 255, 255, 0);
+  outline-color: none;
+  width: 90%;
+}
+
+strong {
+  font-weight: 700;
+}
+
+.votos img {
+  width: 100%;
+  z-index: 1;
+}
+
+.votos>div>article {
+  opacity: 0;
+  transform: translateY(-30px);
+  animation-duration: .5s;
+  animation-timing-function: ease;
+  animation-name: animacion-entrada;
+  animation-fill-mode: forwards;
 }
 
 .main-forma {
@@ -225,11 +392,15 @@ textarea {
 #fantasma {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   justify-content: center;
   width: 100%;
   height: 100%;
   text-align: center;
+}
+
+.ttt {
+  display: block;
 }
 
 #fantasma h2 {
@@ -241,11 +412,123 @@ textarea {
   justify-content: flex-end;
 }
 
+@keyframes animacion-entrada {
+  0% {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.votos article:nth-child(1) {
+  animation-delay: .3s;
+}
+
+.votos article:nth-child(2) {
+  animation-delay: .4s;
+}
+
+.votos article:nth-child(3) {
+  animation-delay: .5s;
+}
+
+.votos article:nth-child(4) {
+  animation-delay: .6s;
+}
+
+.votos article:nth-child(5) {
+  animation-delay: .7s;
+}
+
+.votos article:nth-child(6) {
+  animation-delay: .8s;
+}
+
+.votos article:nth-child(7) {
+  animation-delay: .9s;
+}
+
+.votos article:nth-child(8) {
+  animation-delay: .10s;
+}
+
+.votos article:nth-child(9) {
+  animation-delay: .11s;
+}
+
+.votos article:nth-child(10) {
+  animation-delay: .12s;
+}
+
+.switch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 75%;
+}
+
+.switch button {
+  background-color: #b72c5b;
+  margin: 5px 15px;
+  font-size: 20px;
+  color: #ffffff;
+  border: none;
+  padding: 5px 20px;
+  transition: all .5s ease;
+}
+
+.switch button:hover {
+  background: #4bbbdd;
+  color: #0b0f55;
+}
+
+.open {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  width: 100%;
+  height: 50px;
+  overflow: hidden;
+  padding: 10px;
+  background-color: #4bbbdd;
+}
+
+.open img {
+  width: 30px;
+  margin: 0 5px;
+  transition: all 0 ease;
+}
+
+.open img:hover {
+  transform: translate(0, -46px);
+}
+
+.insta-box > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.voto-accion {
+  display: inline-block;
+  position: absolute;
+  z-index: 2;
+  width: 50%;
+  height: 50%;
+  background-image: url('../Images/icon-assets/Like-action.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0;
+}
+
 
 /*Mobile*/
 @media screen and (max-width: 374px) {
   /*CSS Para Dispositivos Chicos*/
-
   .botoncilloscul button,
   .env {
     font-size: 1em;
@@ -256,15 +539,36 @@ textarea {
 
   .stemen {
     background-size: 400%;
+    height: 500px;
   }
 
   #cajablanca {
-    overflow: auto;
     padding: 4px;
+    width: 90%;
+  }
+
+  .botoncilloscul {
+    margin: 20px;
+  }
+
+  .nav-menu a {
+    display: none;
+  }
+
+  .hamburguesa {
+    display: flex;
+  }
+
+  #ham-boton {
+    display: block;
+    width: 15%;
+  }
+
+  #loguitops {
+    transform: translate(-40px, 0) scale(0.7);
   }
 }
 @media screen and (min-width: 375px) and (max-width: 600px) {
-
   .botoncilloscul button,
   .env {
     font-size: 1em;
@@ -275,7 +579,7 @@ textarea {
 
   .stemen {
     background-size: 350%;
-    text-align: center;
+    height: 600px;
   }
 
   .que-equipo{
@@ -285,6 +589,120 @@ textarea {
   #cajablanca {
     padding: 5px;
     overflow: auto;
+    width: 90%;
+  }
+
+  .ttt {
+    margin: 50px;
+  }
+
+  .botoncilloscul {
+    margin: 50px;
+  }
+
+  .nav-menu a {
+    display: none;
+  }
+
+  .hamburguesa {
+    display: flex;
+  }
+
+  #ham-boton {
+    display: block;
+    width: 15%;
+  }
+
+  #loguitops {
+    transform: translate(-20px, 0) scale(0.7);
+  }
+}
+
+
+@media screen and (max-width: 600px) {
+  /*CSS Para Dispositivos Chicos*/
+  .switch button {
+    width: 100%;
+  }
+  .votos {
+    padding: 100px 10px 0;
+  }
+
+  .voto-overlay {
+    padding: 90px 20px;
+  }
+
+  .voto-overlay h2 {
+    font-size: 1.5em;
+  }
+
+  .comment h3,
+  #put-comment {
+    font-size: 1em;
+  }
+
+  .exit {
+    padding: 20px;
+  }
+}
+
+@media screen and (min-width: 601px) and (max-width: 1200px) {
+  /*TABLETS Y CRAPPY PCS*/
+  .votos {
+    padding: 100px 50px 0;
+  }
+  .switch {
+    width: 100%;
+  }
+
+  .voto-overlay {
+    padding: 90px 50px;
+  }
+
+  .voto-overlay h2 {
+    font-size: 1.5em;
+  }
+
+  .comment h3,
+  #put-comment {
+    font-size: 1em;
+  }
+
+  .exit {
+    padding: 20px;
+  }
+
+}
+
+@media screen and (min-width: 1201px) and (max-width: 2400px) {
+  /*COMUTADORAS DE ESCRITORIO*/
+
+}
+
+@media screen and (min-width: 2401px) {
+  /*TODO LO GIGANTE*/
+  .votos {
+    padding: 100px 200px;
+  }
+  .switch {
+    width: 100%;
+  }
+
+  .voto-overlay {
+    padding: 90px 50px;
+  }
+
+  .voto-overlay h2 {
+    font-size: 2em;
+  }
+
+  .comment h3,
+  #put-comment {
+    font-size: 1em;
+  }
+
+  .exit {
+    padding: 20px;
   }
 }
 
@@ -299,6 +717,18 @@ textarea {
 
   #azul {
     margin-top: 9%;
+  }
+
+  .nav-menu a {
+    display: none;
+  }
+
+  .hamburguesa {
+    display: flex;
+  }
+
+  #ham-boton {
+    display: block;
   }
 
 }

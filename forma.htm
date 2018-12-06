@@ -7,7 +7,6 @@
   <title>Document</title>
 </head>
 <body>
-
     <header class="container-fluid">
         <nav class="row">
             <section class="col-6 navegador">
@@ -32,20 +31,19 @@
         <div class="LuegoBorraEsto">
         </div>
           <div class="stemen">
-            <h2 id="azul">¿Tienes lo necesario?</h2>
-            <h4 id="blanco">Inicia tu proceso de inscipción</h4>
+            <div class="ttt">
+              <h2 id="azul" class="mr">¿Tienes lo necesario?</h2>
+              <h4 id="blanco">Inicia tu proceso de inscipción</h4>
+            </div>
             <div class="container-fluid botoncilloscul">
-              <div class="row">
-                  <section class="col-4">
-                      <button id="slidea">Equipos</button>
-                  </section>
-                  <section class="col-4">
-                      <button id="slidec">Individual</button>
-                  </section>
-                  <section class="col-4">
-                      <button id="slideb">Parejas</button>
-                  </section>
-              </div>
+              <section class="row switch">
+                  <button class="col-12 col-sm-12 col-md-3 col-xl-3"
+                  id="slidea">Equipos</button>
+                  <button class="col-12 col-sm-12 col-md-4 col-xl-3"
+                  id="slidec">Individuales</button>
+                  <button class="col-12 col-sm-12 col-md-3 col-xl-3"
+                  id="slideb">Parejas</button>
+                </section>
             </div>
             <div id="cajablanca">
                 <form class="container-fluid" id="formaa">
@@ -114,11 +112,6 @@
                           </select>
                         </section>
                   </div>
-                  <div class="row">
-                      <section class="col-12 env-padre">
-                          <button class="env">Enviar</button>
-                      </section>
-                  </div>
                 </form>
                 <form class="container-fluid" id="formab">
                     <h2 class="que-equipo">Parejas</h2>
@@ -186,11 +179,6 @@
                             </select>
                         </section>
                     </div>
-                    <div class="row">
-                        <section class="col-12 env-padre">
-                            <button class="env">Enviar</button>
-                        </section>
-                    </div>
                 </form>
                 <form class="container-fluid" id="formac">
                     <h2 class="que-equipo">Individual</h2>
@@ -254,16 +242,18 @@
                             </select>
                         </section>
                     </div>
-                    <div class="row">
-                        <section class="col-12 env-padre">
-                            <button class="env">Enviar</button>
-                        </section>
-                    </div>
                 </form>
                 <div id="fantasma">
                   <h2 id="azul">Listo</h2>
                   <h4>Tu solicitud ha sido enviada.</h4>
                   <h4>Espera el correo de confirmación</h4>
+                </div>
+                <div class="container-fluid env-padre">
+                  <div class="row">
+                      <section class="col-12 env-padre">
+                          <button class="env">Enviar</button>
+                      </section>
+                  </div>
                 </div>
             </div>
 
@@ -280,7 +270,5 @@
       <script src="js/javascript.js"></script>
       <link rel="stylesheet" href="css/bootstrap.min.css">
       <link rel="stylesheet" href="css/style.css">
-
-
 </body>
 </html>
