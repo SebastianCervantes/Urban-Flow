@@ -19,4 +19,15 @@ $(function() {
       $('.voto-overlay').fadeOut();
     }
  });
+
+ $('.insta-box img').bind('click', function(){
+  //alert('Soy un click feliz de nombre ');
+    buttonpressed = $(this).attr('class');
+    var foto = $('.box>img').attr('src');
+    if(buttonpressed == 'com'){
+      $('#foto-overlay').attr('src',foto);
+      $('.voto-overlay').css({'display':'flex',
+                            'opacity':'1'}).fadeOut(0).fadeIn();
+    }
+ });
 });
